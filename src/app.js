@@ -1,14 +1,8 @@
 //write your code here
 const juego = (ourchoice) => {
-
     const userchoice = ourchoice
-
     const pcchoice = ["rock", "paper", "scissors", "lizard", "spock"];
-
     const choicesRandom = pcchoice[Math.floor(Math.random() * pcchoice.length)];
-
-    console.log("Your choice"+ " " + ourchoice, "Pc choice" + " " + choicesRandom);
-
     const rules = {
         rock: ["scissors", "lizard"],
         paper: ["rock", "spock"],
@@ -17,19 +11,18 @@ const juego = (ourchoice) => {
         spock: ["scissors", "rock"]
     };
 
+    console.log("Your choice " + ourchoice + " Pc choice " + choicesRandom);
+
     if (userchoice === choicesRandom) {
-        console.log("draw")
-
-    } else if (rules[userchoice].includes(choicesRandom)) {
-
-        console.log("You won")
-
-    } else {
-        console.log("You lost")
+        //console.log("draw")
+        return "draw"
     }
-
-    return "Your choice"+ " " + ourchoice, "Pc choice" + " " + choicesRandom
-
+    if (rules[userchoice].includes(choicesRandom)) {
+        //console.log("You won")
+        return "You won"
+    }
+        //console.log("You lost")
+        return "You lost"
 };
 
 console.log(juego("paper"))
